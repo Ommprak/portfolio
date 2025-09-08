@@ -232,7 +232,7 @@ export default function ProjectDetail({ projectId }: ProjectDetailProps) {
             transition={{ duration: 0.8, delay: 0.6 }}
           >
             <h2 className="text-3xl font-bold mb-8 text-center glow-text">Photo Gallery</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
               {galleryImages.map((image, index) => (
                 <motion.div
                   key={index}
