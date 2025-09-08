@@ -37,7 +37,10 @@ export default function About() {
               <img
                 src="https://res.cloudinary.com/dbdnjaewg/image/upload/v1757242171/WhatsApp_Image_2025-09-03_at_4.12.40_PM_q9lbvh.jpg"
                 alt="Omm Prakash Nayak - Developer Profile"
-                className="w-80 h-80 rounded-full object-cover hover-lift glow border-4 border-accent/20"
+                className="w-80 h-80 rounded-full object-cover hover-lift border-4 border-accent/20"
+                style={{
+                  boxShadow: "0 0 30px rgba(139, 92, 246, 0.6), 0 0 60px rgba(139, 92, 246, 0.4), 0 0 90px rgba(139, 92, 246, 0.2)"
+                }}
                 data-testid="profile-image"
               />
             </div>
