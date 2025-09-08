@@ -10,7 +10,15 @@ export default function About() {
     { name: 'Illustrator', icon: 'ph-palette' },
     { name: 'Sketch', icon: 'ph-pen-nib' },
     { name: 'Spline', icon: 'ph-cube' },
-    { name: 'InDesign', icon: 'ph-layout' }
+    { name: 'InDesign', icon: 'ph-layout' },
+    { name: 'React', icon: 'ph-atom' },
+    { name: 'TypeScript', icon: 'ph-code' },
+    { name: 'JavaScript', icon: 'ph-function' },
+    { name: 'HTML', icon: 'ph-file-html' },
+    { name: 'CSS', icon: 'ph-paint-brush' },
+    { name: 'Node.js', icon: 'ph-terminal' },
+    { name: 'Git', icon: 'ph-git-branch' },
+    { name: 'Database', icon: 'ph-database' }
   ];
 
   return (
