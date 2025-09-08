@@ -38,7 +38,7 @@ export default function About() {
               
               {/* Additional Profile Images */}
               <motion.div 
-                className="absolute top-12 -right-16 z-20"
+                className="absolute top-32 -right-16 z-20"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={isIntersecting ? { opacity: 1, scale: 1 } : {}}
                 transition={{ duration: 0.8, delay: 0.3 }}
@@ -52,7 +52,7 @@ export default function About() {
               </motion.div>
               
               <motion.div 
-                className="absolute -bottom-12 -left-16 z-10"
+                className="absolute top-32 -left-16 z-10"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={isIntersecting ? { opacity: 1, scale: 1 } : {}}
                 transition={{ duration: 0.8, delay: 0.4 }}
