@@ -54,12 +54,25 @@ export default function About() {
               About Me
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed" data-testid="about-description">
-              I'm a creative graphic designer with a passion for turning ideas into impactful visuals. 
-              From crafting unique brand identities and engaging social media designs to producing 
-              clean layouts and stunning digital artwork, I focus on blending creativity with functionality. 
-              With an eye for detail and a strong sense of aesthetics, I aim to create designs that not 
-              only look appealing but also communicate stories effectively. My journey in design has been 
-              about exploring colors, typography, and visual harmony to deliver designs that leave a lasting impression.
+              {(() => {
+                const text = "I'm a creative graphic designer with a passion for turning ideas into impactful visuals. From crafting unique brand identities and engaging social media designs to producing clean layouts and stunning digital artwork, I focus on blending creativity with functionality. With an eye for detail and a strong sense of aesthetics, I aim to create designs that not only look appealing but also communicate stories effectively. My journey in design has been about exploring colors, typography, and visual harmony to deliver designs that leave a lasting impression.";
+                const words = text.split(' ');
+                return words.map((word, index) => (
+                  <motion.span
+                    key={index}
+                    className="inline-block mr-1"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={isIntersecting ? { opacity: 1, y: 0 } : {}}
+                    transition={{ 
+                      duration: 0.3, 
+                      delay: index * 0.05 + 0.5,
+                      ease: "easeOut"
+                    }}
+                  >
+                    {word}
+                  </motion.span>
+                ));
+              })()}
             </p>
             
             {/* Skills Icons */}
