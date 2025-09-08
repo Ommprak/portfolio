@@ -247,7 +247,7 @@ export default function ProjectDetail({ projectId }: ProjectDetailProps) {
                   <img
                     src={image}
                     alt={`${project.title} - Photo ${index + 1}`}
-                    className="w-full h-80 object-cover rounded-xl shadow-lg hover-lift"
+                    className="w-full aspect-video object-cover rounded-xl shadow-lg hover-lift"
                   />
                   <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl flex items-center justify-center">
                     <i className="ph ph-magnifying-glass-plus text-3xl text-white"></i>
