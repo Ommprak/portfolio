@@ -64,7 +64,10 @@ export default function Projects() {
               <img
                 src={project.id === 1 ? "https://res.cloudinary.com/dbdnjaewg/image/upload/v1757261821/Generated_Image_September_07_2025_-_12_22PM_x2sdww.jpg" : project.image}
                 alt={`${project.title} Project Screenshot`}
-                className="rounded-xl shadow-lg hover-lift w-full h-auto"
+                className="rounded-xl hover-lift w-full h-auto"
+                style={{
+                  boxShadow: "0 0 25px rgba(139, 92, 246, 0.5), 0 0 50px rgba(139, 92, 246, 0.3), 0 0 75px rgba(139, 92, 246, 0.1)"
+                }}
                 data-testid={`project-image-${project.id}`}
               />
             </motion.div>
