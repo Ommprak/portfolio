@@ -89,6 +89,9 @@ export default function Projects() {
                   <span
                     key={tech}
                     className="bg-accent/20 text-accent px-3 py-1 rounded-full text-sm"
+                    style={{
+                      boxShadow: "0 0 15px rgba(139, 92, 246, 0.4), 0 0 30px rgba(139, 92, 246, 0.2)"
+                    }}
                     data-testid={`project-tech-${project.id}-${tech.toLowerCase()}`}
                   >
                     {tech}
