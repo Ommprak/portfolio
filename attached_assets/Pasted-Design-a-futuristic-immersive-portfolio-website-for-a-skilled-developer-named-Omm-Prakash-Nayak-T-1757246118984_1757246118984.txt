@@ -1,0 +1,18 @@
+Design a futuristic, immersive portfolio website for a skilled developer named Omm Prakash Nayak . The overall style should be cinematic and high-end, using a dark black background #05060f combined with glowing gradients and accent lights in #D8ECF8. Add subtle white light spots across the layout to enhance depth and digital feel. Use Spline for 3D, and apply scroll-triggered animations throughout the site.
+
+Start with a sticky, transparent header that softly blurs as the user scrolls down.
+
+The hero section should feature only a fullscreen interactive Spline 3D model centered — use this embed:
+<iframe src='https://my.spline.design/robotfollowcursorforlandingpage-10IZP3Rc7GqnxCb7Kw4yJMu0/' frameborder='0' width='100%' height='100%'></iframe>
+
+In the About section, show a glowing circular image of Omm Prakash Nayak  on the left with a hover lift effect. On the right, include a brief bio and a row of skill icons (HTML, CSS, JavaScript, React, Spline). Animate the image and icons to fade and slide in as they enter the viewport.
+
+Introduce a Testimonials section with a horizontal slider of cards. Each card should show a client's image, name, title, and a short review. Animate each card to slide in from the side and glow when active.
+
+For the Projects section, display alternating blocks with project screenshots on one side and text on the other, including title, tech stack, and glowing “View Project” button. As the user scrolls, each project should animate in from opposite sides.
+
+Include a horizontal Mini Gallery showcasing design tiles. On scroll, each tile fades in with an upward movement. On hover, display overlays and allow fullscreen previews.
+
+In the Contact section, add glowing social icons on the left and a glass-style contact form on the right. Animate the section with fade-up and staggered input reveals. The submit button should glow and bounce slightly when clicked.
+
+End with a clean footer, soft glowing nav links, Use the Inter font and Phosphor icons for consistency

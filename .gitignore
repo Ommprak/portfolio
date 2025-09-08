@@ -1,0 +1,42 @@
+# Node
+node_modules/
+
+# Builds
+/dist/
+/dist-ssr/
+/build/
+/tmp/
+/.cache/
+
+# Vite
+.vite/
+*.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Env
+.env
+.env.*
+!.env.example
+
+# OS
+.DS_Store
+Thumbs.db
+
+# TypeScript
+*.tsbuildinfo
+
+# IDE
+.vscode/
+.idea/
+
+# Replit/local
+.replit
+.local/
+
+# Drizzle
+drizzle/ 

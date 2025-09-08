@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(222, 84%, 4.9%);
+  --foreground: hsl(0, 0%, 100%);
+  --card: hsl(222, 84%, 4.9%);
+  --card-foreground: hsl(0, 0%, 100%);
+  --popover: hsl(222, 84%, 4.9%);
+  --popover-foreground: hsl(0, 0%, 100%);
+  --primary: hsl(203, 75%, 86%);
+  --primary-foreground: hsl(222, 84%, 4.9%);
+  --secondary: hsl(217, 32%, 17%);
+  --secondary-foreground: hsl(0, 0%, 100%);
+  --muted: hsl(217, 32%, 17%);
+  --muted-foreground: hsl(210, 40%, 80%);
+  --accent: hsl(203, 75%, 86%);
+  --accent-foreground: hsl(222, 84%, 4.9%);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --border: hsl(217, 32%, 17%);
+  --input: hsl(217, 32%, 17%);
+  --ring: hsl(203, 75%, 86%);
+  --radius: 0.5rem;
+  
+  /* Custom portfolio colors */
+  --portfolio-bg: hsl(222, 84%, 4.9%);
+  --portfolio-accent: hsl(203, 75%, 86%);
+  --portfolio-glass: hsla(203, 75%, 86%, 0.05);
+  --portfolio-glow: hsla(203, 75%, 86%, 0.3);
+}
+
+.dark {
+  --background: hsl(222, 84%, 4.9%);
+  --foreground: hsl(0, 0%, 100%);
+  --card: hsl(222, 84%, 4.9%);
+  --card-foreground: hsl(0, 0%, 100%);
+  --popover: hsl(222, 84%, 4.9%);
+  --popover-foreground: hsl(0, 0%, 100%);
+  --primary: hsl(203, 75%, 86%);
+  --primary-foreground: hsl(222, 84%, 4.9%);
+  --secondary: hsl(217, 32%, 17%);
+  --secondary-foreground: hsl(0, 0%, 100%);
+  --muted: hsl(217, 32%, 17%);
+  --muted-foreground: hsl(210, 40%, 80%);
+  --accent: hsl(203, 75%, 86%);
+  --accent-foreground: hsl(222, 84%, 4.9%);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --border: hsl(217, 32%, 17%);
+  --input: hsl(217, 32%, 17%);
+  --ring: hsl(203, 75%, 86%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-portfolio-bg text-foreground font-inter antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+    overflow-x: hidden;
+    color: hsl(0, 0%, 100%);
+  }
+}
+
+@layer components {
+  .light-spots {
+    position: relative;
+  }
+  
+  .light-spots::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+      radial-gradient(circle at 20% 30%, hsla(203, 75%, 86%, 0.03) 0%, transparent 30%),
+      radial-gradient(circle at 80% 70%, hsla(203, 75%, 86%, 0.02) 0%, transparent 25%),
+      radial-gradient(circle at 40% 80%, hsla(203, 75%, 86%, 0.04) 0%, transparent 35%),
+      radial-gradient(circle at 70% 20%, hsla(203, 75%, 86%, 0.03) 0%, transparent 30%);
+    pointer-events: none;
+    z-index: 1;
+  }
+  
+  .glass {
+    background: var(--portfolio-glass);
+    backdrop-filter: blur(20px);
+    border: 1px solid hsla(203, 75%, 86%, 0.1);
+  }
+  
+  .glow {
+    box-shadow: 0 0 30px var(--portfolio-glow);
+  }
+  
+  .glow-text {
+    text-shadow: 0 0 20px var(--portfolio-glow);
+  }
+  
+  .scroll-blur {
+    backdrop-filter: blur(20px);
+    background: hsla(222, 84%, 4.9%, 0.9);
+  }
+  
+  .hover-lift {
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-10px);
+  }
+  
+  .testimonial-slider {
+    display: flex;
+    gap: 2rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 1rem;
+  }
+  
+  .testimonial-card {
+    min-width: 350px;
+    scroll-snap-align: start;
+  }
+  
+  .testimonial-slider::-webkit-scrollbar {
+    height: 6px;
+  }
+  
+  .testimonial-slider::-webkit-scrollbar-track {
+    background: hsla(203, 75%, 86%, 0.1);
+    border-radius: 3px;
+  }
+  
+  .testimonial-slider::-webkit-scrollbar-thumb {
+    background: hsla(203, 75%, 86%, 0.3);
+    border-radius: 3px;
+  }
+  
+  .modal-overlay {
+    background-color: hsla(222, 84%, 4.9%, 0.95);
+    backdrop-filter: blur(10px);
+  }
+}
+
+@layer utilities {
+  .font-inter {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  
+  .bg-portfolio-bg {
+    background-color: var(--portfolio-bg);
+  }
+  
+  .text-portfolio-accent {
+    color: var(--portfolio-accent);
+  }
+  
+  .border-portfolio-accent {
+    border-color: var(--portfolio-accent);
+  }
+}
