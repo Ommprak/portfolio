@@ -104,6 +104,9 @@ export default function Contact() {
                   key={link.name}
                   href={link.href}
                   className="flex items-center gap-4 glass rounded-lg p-4 hover:glow transition-all duration-300"
+                  style={{
+                    boxShadow: "0 0 20px rgba(139, 92, 246, 0.4), 0 0 40px rgba(139, 92, 246, 0.2)"
+                  }}
                   initial={{ opacity: 0, y: 20 }}
                   animate={isIntersecting ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
