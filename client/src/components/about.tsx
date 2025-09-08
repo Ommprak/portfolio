@@ -25,9 +25,9 @@ export default function About() {
             animate={isIntersecting ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8 }}
           >
-            <div className="flex flex-col items-center space-y-6">
+            <div className="relative w-80 h-80">
               {/* Main Profile Image */}
-              <div className="relative">
+              <div className="absolute top-0 left-0 z-30">
                 <img
                   src="https://res.cloudinary.com/dbdnjaewg/image/upload/v1757242171/WhatsApp_Image_2025-09-03_at_4.12.40_PM_q9lbvh.jpg"
                   alt="Omm Prakash Nayak - Developer Profile"
@@ -37,35 +37,33 @@ export default function About() {
               </div>
               
               {/* Additional Profile Images */}
-              <div className="flex space-x-4">
-                <motion.div 
-                  className="relative"
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={isIntersecting ? { opacity: 1, scale: 1 } : {}}
-                  transition={{ duration: 0.8, delay: 0.3 }}
-                >
-                  <img
-                    src=""
-                    alt="Additional Profile Image 1"
-                    className="w-32 h-32 rounded-full object-cover hover-lift glow border-4 border-accent/20 bg-gray-800"
-                    data-testid="profile-image-2"
-                  />
-                </motion.div>
-                
-                <motion.div 
-                  className="relative"
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={isIntersecting ? { opacity: 1, scale: 1 } : {}}
-                  transition={{ duration: 0.8, delay: 0.4 }}
-                >
-                  <img
-                    src=""
-                    alt="Additional Profile Image 2"
-                    className="w-32 h-32 rounded-full object-cover hover-lift glow border-4 border-accent/20 bg-gray-800"
-                    data-testid="profile-image-3"
-                  />
-                </motion.div>
-              </div>
+              <motion.div 
+                className="absolute top-12 -right-16 z-20"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={isIntersecting ? { opacity: 1, scale: 1 } : {}}
+                transition={{ duration: 0.8, delay: 0.3 }}
+              >
+                <img
+                  src=""
+                  alt="Additional Profile Image 1"
+                  className="w-80 h-80 rounded-full object-cover hover-lift glow border-4 border-accent/20 bg-gray-800"
+                  data-testid="profile-image-2"
+                />
+              </motion.div>
+              
+              <motion.div 
+                className="absolute -bottom-12 -left-16 z-10"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={isIntersecting ? { opacity: 1, scale: 1 } : {}}
+                transition={{ duration: 0.8, delay: 0.4 }}
+              >
+                <img
+                  src=""
+                  alt="Additional Profile Image 2"
+                  className="w-80 h-80 rounded-full object-cover hover-lift glow border-4 border-accent/20 bg-gray-800"
+                  data-testid="profile-image-3"
+                />
+              </motion.div>
             </div>
           </motion.div>
 
