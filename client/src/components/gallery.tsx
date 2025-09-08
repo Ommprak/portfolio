@@ -142,7 +142,7 @@ export default function Gallery() {
           Design Gallery
         </motion.h2>
         
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
           {galleryItems.map((item, index) => (
             <motion.div
               key={item.id}
@@ -156,7 +156,7 @@ export default function Gallery() {
               <img
                 src={item.thumbnail}
                 alt={item.alt}
-                className="w-full h-48 object-cover rounded-lg"
+                className="w-full aspect-video object-cover rounded-lg"
               />
               <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center">
                 <i className="ph ph-magnifying-glass-plus text-3xl text-white"></i>
