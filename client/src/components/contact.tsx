@@ -64,7 +64,7 @@ export default function Contact() {
     { name: 'LinkedIn', icon: 'ph-linkedin-logo', href: 'https://www.linkedin.com/in/omm-prakash-nayak-094916309' },
     { name: 'GitHub', icon: 'ph-github-logo', href: '#' },
     { name: 'Instagram', icon: 'ph-instagram-logo', href: 'https://www.instagram.com/creativesuiteomm?igsh=MWJzNzljcm44enBzZw==' },
-    { name: 'Email', icon: 'ph-envelope', href: 'mailto:omm@example.com' }
+    { name: 'Email', icon: 'ph-envelope', href: 'mailto:ommprakash0176@gmail.com' }
   ];
 
   return (
