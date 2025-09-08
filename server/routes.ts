@@ -1,6 +1,7 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { z } from "zod";
+import { EmailService } from "./email";
 
 const contactSchema = z.object({
   name: z.string().min(1, "Name is required"),
@@ -9,20 +10,17 @@ const contactSchema = z.object({
 });
 
 export async function registerRoutes(app: Express): Promise<Server> {
+  const emailService = new EmailService();
+
   // Contact form endpoint
   app.post("/api/contact", async (req, res) => {
     try {
       const validatedData = contactSchema.parse(req.body);
       
-      // In a real application, you would:
-      // 1. Send an email using a service like SendGrid, Nodemailer, etc.
-      // 2. Save to database
-      // 3. Send notifications
-      
       console.log("Contact form submission:", validatedData);
       
-      // Simulate email sending delay
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      // Send email using the email service
+      await emailService.sendContactFormEmail(validatedData);
       
       res.json({ 
         success: true, 
@@ -39,7 +37,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         console.error("Contact form error:", error);
         res.status(500).json({ 
           success: false, 
-          message: "Internal server error" 
+          message: "Failed to send message" 
         });
       }
     }
