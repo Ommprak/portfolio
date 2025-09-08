@@ -9,7 +9,8 @@ export default function About() {
     { name: 'Photoshop', icon: 'ph-image' },
     { name: 'Illustrator', icon: 'ph-palette' },
     { name: 'Sketch', icon: 'ph-pen-nib' },
-    { name: 'Spline', icon: 'ph-cube' }
+    { name: 'Spline', icon: 'ph-cube' },
+    { name: 'InDesign', icon: 'ph-layout' }
   ];
 
   return (
@@ -58,13 +59,26 @@ export default function About() {
               {skills.map((skill, index) => (
                 <motion.div
                   key={skill.name}
-                  className="glass rounded-lg p-3 hover-lift"
+                  className="glass rounded-lg p-3 hover-lift cursor-pointer"
                   initial={{ opacity: 0, y: 20 }}
                   animate={isIntersecting ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.5, delay: index * 0.1 + 0.4 }}
+                  whileHover={{ 
+                    scale: 1.1, 
+                    boxShadow: "0 0 25px rgba(139, 92, 246, 0.6)",
+                    transition: { duration: 0.3 }
+                  }}
+                  whileTap={{ scale: 0.95 }}
                   data-testid={`skill-${skill.name.toLowerCase()}`}
                 >
-                  <i className={`ph ${skill.icon} text-3xl text-accent`}></i>
+                  <motion.i 
+                    className={`ph ${skill.icon} text-3xl text-accent`}
+                    whileHover={{ 
+                      color: "#a855f7",
+                      filter: "drop-shadow(0 0 8px rgba(168, 85, 247, 0.8))",
+                      transition: { duration: 0.3 }
+                    }}
+                  ></motion.i>
                   <span className="block text-sm mt-2">{skill.name}</span>
                 </motion.div>
               ))}
