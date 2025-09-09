@@ -4,6 +4,7 @@ import { useLocation } from 'wouter';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [, navigate] = useLocation();
 
   useEffect(() => {
@@ -16,6 +17,8 @@ export default function Header() {
   }, []);
 
   const handleNavigation = (item: { name: string; id: string; type?: string }) => {
+    setIsMobileMenuOpen(false); // Close mobile menu after navigation
+    
     if (item.type === 'page') {
       navigate(`/${item.id}`);
     } else if (item.id === 'home') {
@@ -86,12 +89,49 @@ export default function Header() {
           <div className="md:hidden">
             <motion.button
               whileTap={{ scale: 0.95 }}
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               data-testid="mobile-menu-toggle"
             >
-              <i className="ph ph-list text-2xl cursor-pointer"></i>
+              <i className={`ph ${isMobileMenuOpen ? 'ph-x' : 'ph-list'} text-2xl cursor-pointer`}></i>
             </motion.button>
           </div>
         </div>
+
+        {/* Mobile Menu */}
+        <motion.div
+          className="md:hidden"
+          initial={{ opacity: 0, height: 0 }}
+          animate={{ 
+            opacity: isMobileMenuOpen ? 1 : 0,
+            height: isMobileMenuOpen ? 'auto' : 0
+          }}
+          transition={{ duration: 0.3 }}
+          style={{ overflow: 'hidden' }}
+        >
+          {isMobileMenuOpen && (
+            <div className="px-6 py-4 glass border-t border-border">
+              {[
+                { name: 'Home', id: 'home' },
+                { name: 'About', id: 'about' },
+                { name: 'Projects', id: 'projects' },
+                { name: 'Resume', id: 'resume', type: 'page' },
+                { name: 'Contact', id: 'contact' }
+              ].map((item, index) => (
+                <motion.button
+                  key={item.id}
+                  onClick={() => handleNavigation(item)}
+                  className="block w-full text-left py-3 px-4 text-foreground hover:text-accent hover:bg-accent/10 rounded-lg transition-all duration-200"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.3, delay: index * 0.1 }}
+                  data-testid={`mobile-nav-${item.id}`}
+                >
+                  {item.name}
+                </motion.button>
+              ))}
+            </div>
+          )}
+        </motion.div>
       </nav>
     </motion.header>
   );
