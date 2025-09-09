@@ -1,16 +1,35 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useIntersectionObserver } from '@/hooks/use-intersection-observer';
 import { useState } from 'react';
+import { useLocation } from 'wouter';
 
 export default function Resume() {
   const { ref, isIntersecting } = useIntersectionObserver();
   const [showResumeModal, setShowResumeModal] = useState(false);
+  const [, navigate] = useLocation();
   
   const resumeImageUrl = "https://res.cloudinary.com/dbdnjaewg/image/upload/v1757410946/Black_and_White_Clean_Professional_A4_Resume_1_patltj.jpg";
   const resumePdfUrl = "https://res.cloudinary.com/dbdnjaewg/image/upload/v1757410946/Black_and_White_Clean_Professional_A4_Resume_1_patltj.jpg"; // Replace with your PDF URL
 
   return (
     <div className="min-h-screen bg-portfolio-bg text-foreground">
+      {/* Back to Portfolio Button - Top Left Corner */}
+      <motion.button
+        onClick={() => navigate('/')}
+        className="fixed top-6 left-6 z-50 glass rounded-lg px-4 py-3 hover:glow transition-all duration-300 flex items-center gap-2 text-sm"
+        style={{
+          boxShadow: "0 0 20px rgba(139, 92, 246, 0.4), 0 0 40px rgba(139, 92, 246, 0.2)"
+        }}
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+      >
+        <i className="ph ph-arrow-left text-accent"></i>
+        <span>Back to Portfolio</span>
+      </motion.button>
+
       <main className="pt-24 pb-20" ref={ref}>
         <div className="container mx-auto px-6">
           <motion.div
