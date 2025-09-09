@@ -7,6 +7,7 @@ export default function Resume() {
   const [showResumeModal, setShowResumeModal] = useState(false);
   
   const resumeImageUrl = "https://res.cloudinary.com/dbdnjaewg/image/upload/v1757410946/Black_and_White_Clean_Professional_A4_Resume_1_patltj.jpg";
+  const resumePdfUrl = "https://res.cloudinary.com/dbdnjaewg/image/upload/v1757410946/Black_and_White_Clean_Professional_A4_Resume_1_patltj.jpg"; // Replace with your PDF URL
 
   return (
     <div className="min-h-screen bg-portfolio-bg text-foreground">
@@ -57,6 +58,27 @@ export default function Resume() {
                       <i className="ph ph-magnifying-glass-plus text-4xl text-white"></i>
                     </div>
                   </motion.div>
+                  
+                  {/* Download PDF Button */}
+                  <motion.button
+                    className="glass rounded-lg px-8 py-4 hover:glow transition-all duration-300 flex items-center gap-3 w-full justify-center mt-4"
+                    style={{
+                      boxShadow: "0 0 20px rgba(139, 92, 246, 0.4), 0 0 40px rgba(139, 92, 246, 0.2)"
+                    }}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={() => {
+                      const link = document.createElement('a');
+                      link.href = resumePdfUrl;
+                      link.download = 'Omm_Prakash_Nayak_Resume.pdf';
+                      document.body.appendChild(link);
+                      link.click();
+                      document.body.removeChild(link);
+                    }}
+                  >
+                    <i className="ph ph-download text-xl text-accent"></i>
+                    <span className="text-lg font-medium">Download PDF Resume</span>
+                  </motion.button>
                 </div>
               </div>
 
