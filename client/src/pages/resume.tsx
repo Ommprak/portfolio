@@ -1,8 +1,12 @@
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useIntersectionObserver } from '@/hooks/use-intersection-observer';
+import { useState } from 'react';
 
 export default function Resume() {
   const { ref, isIntersecting } = useIntersectionObserver();
+  const [showResumeModal, setShowResumeModal] = useState(false);
+  
+  const resumeImageUrl = "https://res.cloudinary.com/dbdnjaewg/image/upload/v1757410946/Black_and_White_Clean_Professional_A4_Resume_1_patltj.jpg";
 
   return (
     <div className="min-h-screen bg-portfolio-bg text-foreground">
@@ -29,27 +33,30 @@ export default function Resume() {
               className="space-y-8"
             >
               <div className="glass rounded-xl p-8">
-                <h2 className="text-3xl font-bold mb-6 glow-text">Download Resume</h2>
+                <h2 className="text-3xl font-bold mb-6 glow-text">My Resume</h2>
                 <div className="space-y-4">
                   <p className="text-muted-foreground">
-                    Get the latest version of my resume with complete details about my experience, 
+                    Click on the resume image below to view the full version with complete details about my experience, 
                     skills, and achievements in design and development.
                   </p>
-                  <motion.button
-                    className="glass rounded-lg px-8 py-4 hover:glow transition-all duration-300 flex items-center gap-3 w-full justify-center"
-                    style={{
-                      boxShadow: "0 0 20px rgba(139, 92, 246, 0.4), 0 0 40px rgba(139, 92, 246, 0.2)"
-                    }}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    onClick={() => {
-                      // Add your resume PDF link here
-                      window.open('#', '_blank');
-                    }}
+                  <motion.div
+                    className="relative cursor-pointer group"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    onClick={() => setShowResumeModal(true)}
                   >
-                    <i className="ph ph-download text-xl text-accent"></i>
-                    <span className="text-lg font-medium">Download PDF Resume</span>
-                  </motion.button>
+                    <img
+                      src={resumeImageUrl}
+                      alt="Omm Prakash Nayak Resume"
+                      className="w-full aspect-[3/4] object-cover rounded-xl shadow-lg"
+                      style={{
+                        boxShadow: "0 0 25px rgba(139, 92, 246, 0.5), 0 0 50px rgba(139, 92, 246, 0.3)"
+                      }}
+                    />
+                    <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl flex items-center justify-center">
+                      <i className="ph ph-magnifying-glass-plus text-4xl text-white"></i>
+                    </div>
+                  </motion.div>
                 </div>
               </div>
 
@@ -138,6 +145,51 @@ export default function Resume() {
           </div>
         </div>
       </main>
+
+      {/* Resume Modal */}
+      <AnimatePresence>
+        {showResumeModal && (
+          <motion.div
+            className="fixed inset-0 bg-black/90 flex items-center justify-center z-50 p-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setShowResumeModal(false)}
+          >
+            <motion.div
+              className="relative max-w-4xl max-h-full"
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              transition={{ type: "spring", damping: 15 }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <img
+                src={resumeImageUrl}
+                alt="Omm Prakash Nayak Resume - Full View"
+                className="max-w-full max-h-[90vh] object-contain rounded-lg"
+              />
+              
+              {/* Close Button */}
+              <button
+                onClick={() => setShowResumeModal(false)}
+                className="absolute top-4 right-4 text-white bg-black/50 rounded-full p-2 hover:bg-black/70 transition-colors"
+              >
+                <i className="ph ph-x text-xl"></i>
+              </button>
+              
+              {/* Download Button */}
+              <button
+                onClick={() => window.open(resumeImageUrl, '_blank')}
+                className="absolute bottom-4 right-4 text-white bg-accent/80 rounded-full p-3 hover:bg-accent transition-colors flex items-center gap-2"
+              >
+                <i className="ph ph-download text-lg"></i>
+                <span className="text-sm font-medium">Download</span>
+              </button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
