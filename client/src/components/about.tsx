@@ -8,6 +8,7 @@ export default function About() {
     { name: 'Figma', icon: 'ph-figma-logo' },
     { name: 'Photoshop', icon: 'ph-image' },
     { name: 'Illustrator', icon: 'ph-palette' },
+    { name: 'Premiere Pro', icon: 'ph-video' },
     { name: 'Sketch', icon: 'ph-pen-nib' },
     { name: 'Spline', icon: 'ph-cube' },
     { name: 'InDesign', icon: 'ph-layout' },
