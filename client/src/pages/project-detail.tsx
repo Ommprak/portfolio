@@ -105,9 +105,15 @@ export default function ProjectDetail({ projectId }: ProjectDetailProps) {
         'https://res.cloudinary.com/dbdnjaewg/image/upload/v1757261819/Double_Overhead_Magazine_Mockup_01_ip28xk.jpg'
       ];
     } else if (project?.id === 3) {
-      // Own design collection
+      // Own design collection - Billboard and Outdoor Advertising designs
       return [
-        'https://res.cloudinary.com/dbdnjaewg/image/upload/v1757267756/Generated_Image_September_07_2025_-_11_24PM_gbnob0.jpg'
+        'https://res.cloudinary.com/dbdnjaewg/image/upload/v1757495273/WhatsApp_Image_2025-09-10_at_10.22.09_AM_nfjrzc.jpg',
+        'https://res.cloudinary.com/dbdnjaewg/image/upload/v1757495222/Outdoor_Advertising_cec9sj.jpg',
+        'https://res.cloudinary.com/dbdnjaewg/image/upload/v1757495221/Billboard_Mockup_oo14op.jpg',
+        'https://res.cloudinary.com/dbdnjaewg/image/upload/v1757495219/Square_Billboard_Mockup_gb3p7i.jpg',
+        'https://res.cloudinary.com/dbdnjaewg/image/upload/v1757495219/Outdoor-Advertising-PSD-MockUps-2_tviih5.jpg',
+        'https://res.cloudinary.com/dbdnjaewg/image/upload/v1757495218/Big_Square_Billboard_Mockup_dzrb1o.jpg',
+        'https://res.cloudinary.com/dbdnjaewg/image/upload/v1757495218/bill_board_khaf1h.jpg'
       ];
     }
     return [];
