@@ -74,3 +74,26 @@ Preferred communication style: Simple, everyday language.
 ### Fonts and Typography
 - **Google Fonts**: Inter font family for consistent typography
 - **Custom Font Loading**: Optimized font loading with preconnect and display swap
+
+## Recent Changes
+
+### October 24, 2025 - Replit Environment Setup
+- Configured Vite development server with `strictPort: false` for Replit proxy compatibility
+- Updated drizzle.config.ts to make DATABASE_URL optional (uses placeholder if not set)
+- Installed all npm dependencies from package.json
+- Set up development workflow to run `npm run dev` on port 5000
+- Configured deployment settings:
+  - Build: `npm run build`
+  - Run: `npm start`
+  - Deployment target: autoscale (for stateless web application)
+- Application uses MemStorage fallback when PostgreSQL database is not available
+- Contact form requires GMAIL_USER and GMAIL_APP_PASSWORD environment variables for email functionality
+
+## Environment Variables
+
+### Required for Contact Form
+- `GMAIL_USER`: Gmail account for sending contact form emails
+- `GMAIL_APP_PASSWORD`: Gmail app-specific password for authentication
+
+### Optional
+- `DATABASE_URL`: PostgreSQL connection string (app uses in-memory storage if not set)
