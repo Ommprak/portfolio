@@ -34,6 +34,14 @@ export default function Projects() {
       image: 'https://res.cloudinary.com/dbdnjaewg/image/upload/v1757264943/Generated_Image_September_07_2025_-_10_38PM_frkxp8.jpg',
       tech: ['Creative Design', 'Visual Arts', 'Personal Projects'],
       imageLeft: true
+    },
+    {
+      id: 4,
+      title: 'Previous Company Work / Freelancing Client Work',
+      description: 'A comprehensive portfolio of professional design work completed for corporate clients and freelance projects. This collection showcases versatility across different industries, client requirements, and design challenges. From corporate branding and marketing materials to digital campaigns and print collateral, each project demonstrates adaptability, professionalism, and commitment to delivering client-focused solutions that meet business objectives while maintaining creative excellence.',
+      image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400',
+      tech: ['Client Projects', 'Corporate Design', 'Freelance', 'Multi-Industry'],
+      imageLeft: false
     }
   ];
 
