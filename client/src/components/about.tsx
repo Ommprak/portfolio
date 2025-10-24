@@ -19,7 +19,15 @@ export default function About() {
     { name: 'CSS', icon: 'ph-paint-brush' },
     { name: 'Node.js', icon: 'ph-terminal' },
     { name: 'Git', icon: 'ph-git-branch' },
-    { name: 'Database', icon: 'ph-database' }
+    { name: 'Database', icon: 'ph-database' },
+    { name: 'ChatGPT', icon: 'ph-robot' },
+    { name: 'Google Gemini', icon: 'ph-sparkle' },
+    { name: 'Claude AI', icon: 'ph-brain' },
+    { name: 'Midjourney', icon: 'ph-magic-wand' },
+    { name: 'DALL-E', icon: 'ph-image-square' },
+    { name: 'Copilot', icon: 'ph-code-block' },
+    { name: 'Stable Diffusion', icon: 'ph-lightning' },
+    { name: 'Perplexity', icon: 'ph-magnifying-glass-plus' }
   ];
 
   return (
