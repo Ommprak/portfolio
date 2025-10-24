@@ -71,12 +71,7 @@ const projectData = {
     id: 4,
     title: 'Previous Company Work / Freelancing Client Work',
     description: 'A comprehensive portfolio showcasing professional design work delivered for various corporate clients and freelance projects across multiple industries. This collection demonstrates the ability to adapt to diverse client needs, brand guidelines, and industry standards while maintaining high-quality creative output. The work spans corporate identity development, marketing campaigns, digital assets, print materials, and multi-channel design solutions. Each project reflects a deep understanding of client objectives, target audiences, and market positioning, combined with strategic design thinking and flawless execution.',
-    images: [
-      'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600',
-      'https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600',
-      'https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600',
-      'https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600'
-    ],
+    images: [],
     tech: ['Client Projects', 'Corporate Design', 'Freelance', 'Multi-Industry', 'Brand Strategy'],
     features: [
       'Corporate Identity & Branding',
@@ -139,17 +134,8 @@ export default function ProjectDetail({ projectId }: ProjectDetailProps) {
         'https://res.cloudinary.com/dbdnjaewg/image/upload/v1757495218/bill_board_khaf1h.jpg'
       ];
     } else if (project?.id === 4) {
-      // Previous company work / freelancing client work
-      return [
-        'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600',
-        'https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600',
-        'https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600',
-        'https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600',
-        'https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600',
-        'https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600',
-        'https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600',
-        'https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600'
-      ];
+      // Previous company work / freelancing client work - no default photos
+      return [];
     }
     return [];
   };
