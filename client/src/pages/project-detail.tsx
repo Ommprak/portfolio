@@ -134,8 +134,64 @@ export default function ProjectDetail({ projectId }: ProjectDetailProps) {
         'https://res.cloudinary.com/dbdnjaewg/image/upload/v1757495218/bill_board_khaf1h.jpg'
       ];
     } else if (project?.id === 4) {
-      // Previous company work / freelancing client work - no default photos
-      return [];
+      // Previous company work / freelancing client work
+      return [
+        'https://res.cloudinary.com/dbdnjaewg/image/upload/v1761315175/WhatsApp_Image_2025-10-24_at_7.41.38_PM_ythokz.jpg',
+        'https://res.cloudinary.com/dbdnjaewg/image/upload/v1761315174/WhatsApp_Image_2025-10-24_at_7.41.37_PM_1_wxurm2.jpg',
+        'https://res.cloudinary.com/dbdnjaewg/image/upload/v1761315174/WhatsApp_Image_2025-10-24_at_7.41.37_PM_spprih.jpg',
+        'https://res.cloudinary.com/dbdnjaewg/image/upload/v1761315174/WhatsApp_Image_2025-10-24_at_7.41.35_PM_2_x7e5qu.jpg',
+        'https://res.cloudinary.com/dbdnjaewg/image/upload/v1761315174/WhatsApp_Image_2025-10-24_at_7.41.37_PM_2_jmdeov.jpg',
+        'https://res.cloudinary.com/dbdnjaewg/image/upload/v1761315174/WhatsApp_Image_2025-10-24_at_7.41.35_PM_uzhomb.jpg',
+        'https://res.cloudinary.com/dbdnjaewg/image/upload/v1761315174/WhatsApp_Image_2025-10-24_at_7.41.36_PM_ooinb5.jpg',
+        'https://res.cloudinary.com/dbdnjaewg/image/upload/v1761315174/WhatsApp_Image_2025-10-24_at_7.41.36_PM_1_xeydxr.jpg',
+        'https://res.cloudinary.com/dbdnjaewg/image/upload/v1761315173/WhatsApp_Image_2025-10-24_at_7.41.35_PM_1_wb076t.jpg',
+        'https://res.cloudinary.com/dbdnjaewg/image/upload/v1761315173/WhatsApp_Image_2025-10-24_at_7.41.34_PM_nnhrtb.jpg',
+        'https://res.cloudinary.com/dbdnjaewg/image/upload/v1761315062/Screenshot_20251015-022320_2_th4yfh.jpg',
+        'https://res.cloudinary.com/dbdnjaewg/image/upload/v1761315056/WhatsApp_Image_2025-10-24_at_7.37.49_PM_1_g2ukq5.jpg',
+        'https://res.cloudinary.com/dbdnjaewg/image/upload/v1761315056/WhatsApp_Image_2025-10-24_at_7.37.49_PM_fodgqw.jpg',
+        'https://res.cloudinary.com/dbdnjaewg/image/upload/v1761315055/WhatsApp_Image_2025-10-24_at_7.37.50_PM_k3clxf.jpg',
+        'https://res.cloudinary.com/dbdnjaewg/image/upload/v1761315055/WhatsApp_Image_2025-10-24_at_7.37.50_PM_1_w0facd.jpg',
+        'https://res.cloudinary.com/dbdnjaewg/image/upload/v1761315055/Screenshot_20251015-022133_1_ro37mh.jpg',
+        'https://res.cloudinary.com/dbdnjaewg/image/upload/v1761315055/WhatsApp_Image_2025-10-24_at_7.37.50_PM_2_oaa445.jpg',
+        'https://res.cloudinary.com/dbdnjaewg/image/upload/v1761315055/Screenshot_20251015-021515_bepwon.png',
+        'https://res.cloudinary.com/dbdnjaewg/image/upload/v1761315055/Screenshot_20251015-022329_1_knl9bs.jpg',
+        'https://res.cloudinary.com/dbdnjaewg/image/upload/v1761315054/Screenshot_20251015-022334_1_utiyxr.jpg',
+        'https://res.cloudinary.com/dbdnjaewg/image/upload/v1761315054/Screenshot_20251015-021541_lplnqq.png',
+        'https://res.cloudinary.com/dbdnjaewg/image/upload/v1761315054/Screenshot_20251015-022337_1_uap7xp.jpg',
+        'https://res.cloudinary.com/dbdnjaewg/image/upload/v1761315054/Screenshot_20251015-091411_1_tdd6it.jpg',
+        'https://res.cloudinary.com/dbdnjaewg/image/upload/v1761315053/Screenshot_20251015-091422_1_v1fprp.jpg',
+        'https://res.cloudinary.com/dbdnjaewg/image/upload/v1761315053/Screenshot_20251015-022341_1_lsxnba.jpg',
+        'https://res.cloudinary.com/dbdnjaewg/image/upload/v1761315053/Screenshot_20251015-090947_1_mrdrjn.jpg',
+        'https://res.cloudinary.com/dbdnjaewg/image/upload/v1761315053/Screenshot_20251015-091744_1_s9zjrt.jpg',
+        'https://res.cloudinary.com/dbdnjaewg/image/upload/v1761315053/Screenshot_20251015-021453_fyqfem.png',
+        'https://res.cloudinary.com/dbdnjaewg/image/upload/v1761315053/Screenshot_20251015-091350_1_nkhwic.jpg',
+        'https://res.cloudinary.com/dbdnjaewg/image/upload/v1761315053/Screenshot_20251015-091404_1_lxuuwi.jpg',
+        'https://res.cloudinary.com/dbdnjaewg/image/upload/v1761315052/Screenshot_20251015-091353_1_xeass0.jpg',
+        'https://res.cloudinary.com/dbdnjaewg/image/upload/v1761315052/Screenshot_20251015-091336_1_ndv0lf.jpg',
+        'https://res.cloudinary.com/dbdnjaewg/image/upload/v1761315052/Screenshot_20251015-091535_1_mtki7w.jpg',
+        'https://res.cloudinary.com/dbdnjaewg/image/upload/v1761315052/Screenshot_20251015-091333_1_dsq9hy.jpg',
+        'https://res.cloudinary.com/dbdnjaewg/image/upload/v1761315052/Screenshot_20251015-091539_1_mu0mbo.jpg',
+        'https://res.cloudinary.com/dbdnjaewg/image/upload/v1761315052/Screenshot_20251015-091615_1_zvnwfi.jpg',
+        'https://res.cloudinary.com/dbdnjaewg/image/upload/v1761315051/Screenshot_20251015-091703_1_ahcmqr.jpg',
+        'https://res.cloudinary.com/dbdnjaewg/image/upload/v1761315051/Screenshot_20251015-091544_1_ikgeyl.jpg',
+        'https://res.cloudinary.com/dbdnjaewg/image/upload/v1761315051/Screenshot_20251015-091327_1_s4dswp.jpg',
+        'https://res.cloudinary.com/dbdnjaewg/image/upload/v1761315051/Screenshot_20251015-091621_1_umjclx.jpg',
+        'https://res.cloudinary.com/dbdnjaewg/image/upload/v1761315051/Screenshot_20251015-022313_1_t7fq0l.jpg',
+        'https://res.cloudinary.com/dbdnjaewg/image/upload/v1761315050/Screenshot_20251015-090940_1_jiofmt.jpg',
+        'https://res.cloudinary.com/dbdnjaewg/image/upload/v1761315050/Screenshot_20251015-091752_1_ct8ryv.jpg',
+        'https://res.cloudinary.com/dbdnjaewg/image/upload/v1761315050/Screenshot_20251015-091344_1_eagy5n.jpg',
+        'https://res.cloudinary.com/dbdnjaewg/image/upload/v1761315050/Screenshot_20251015-091340_1_itnzcz.jpg',
+        'https://res.cloudinary.com/dbdnjaewg/image/upload/v1761315050/Screenshot_20251015-022034_1_dnvas3.jpg',
+        'https://res.cloudinary.com/dbdnjaewg/image/upload/v1761315049/Screenshot_20251015-021618_kkvuzv.png',
+        'https://res.cloudinary.com/dbdnjaewg/image/upload/v1761315049/Screenshot_20251015-091713_1_wet1j3.jpg',
+        'https://res.cloudinary.com/dbdnjaewg/image/upload/v1761315049/Screenshot_20251015-022049_1_jiioho.jpg',
+        'https://res.cloudinary.com/dbdnjaewg/image/upload/v1761315049/Screenshot_20251015-021921_1_wvsr2v.jpg',
+        'https://res.cloudinary.com/dbdnjaewg/image/upload/v1761315049/Screenshot_20251015-091425_1_ge7xky.jpg',
+        'https://res.cloudinary.com/dbdnjaewg/image/upload/v1761315049/Screenshot_20251015-021908_1_mkudrm.jpg',
+        'https://res.cloudinary.com/dbdnjaewg/image/upload/v1761314677/Screenshot_20251015-021837_1_zy5zpq.jpg',
+        'https://res.cloudinary.com/dbdnjaewg/image/upload/v1761314651/Screenshot_20251015-021825_1_wn1lu5.jpg',
+        'https://res.cloudinary.com/dbdnjaewg/image/upload/v1761314578/Screenshot_20251015-021743_1_e0emxs.jpg'
+      ];
     }
     return [];
   };
