@@ -16,32 +16,32 @@ const videoPoster = (publicId: string, second = 2) =>
 
 const cards: FloatingCard[] = [
   {
-    type: 'video',
-    src: videoPoster(videos[0].publicId, 3),
-    className: 'top-[6%] right-[6%] w-[22%] aspect-[9/16]',
-    rotate: -6,
-    delay: 0.2,
-  },
-  {
     type: 'image',
     src: 'https://res.cloudinary.com/dbdnjaewg/image/upload/v1757263171/Generated_Image_September_07_2025_-_10_07PM_zw9j1c.jpg',
-    className: 'top-[12%] right-[30%] w-[20%] aspect-[3/4]',
-    rotate: 7,
-    delay: 0.4,
+    className: 'top-[4%] left-[6%] w-[44%] aspect-[3/4]',
+    rotate: -7,
+    delay: 0.3,
   },
   {
     type: 'video',
-    src: videoPoster(videos[7].publicId, 2),
-    className: 'bottom-[12%] right-[4%] w-[20%] aspect-[9/16]',
-    rotate: 8,
-    delay: 0.55,
+    src: videoPoster(videos[0].publicId, 3),
+    className: 'top-[2%] right-[4%] w-[40%] aspect-[9/16]',
+    rotate: 6,
+    delay: 0.45,
   },
   {
     type: 'image',
     src: 'https://res.cloudinary.com/dbdnjaewg/image/upload/v1757261821/Generated_Image_September_07_2025_-_12_22PM_x2sdww.jpg',
-    className: 'bottom-[18%] right-[28%] w-[18%] aspect-square',
+    className: 'bottom-[4%] left-[14%] w-[36%] aspect-square',
+    rotate: 5,
+    delay: 0.6,
+  },
+  {
+    type: 'video',
+    src: videoPoster(videos[7].publicId, 2),
+    className: 'bottom-[6%] right-[10%] w-[34%] aspect-[9/16]',
     rotate: -8,
-    delay: 0.7,
+    delay: 0.75,
   },
 ];
 

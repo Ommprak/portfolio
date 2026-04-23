@@ -15,12 +15,10 @@ export default function Hero() {
       id="home"
       className="relative min-h-screen flex items-center overflow-hidden pt-24 pb-16"
     >
-      {/* Custom on-brand visual */}
-      <HeroVisual />
-
       {/* Hero content */}
       <div className="container mx-auto px-6 relative z-20">
-        <div className="max-w-2xl">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          <div className="lg:col-span-7 xl:col-span-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -105,6 +103,12 @@ export default function Hero() {
               </div>
             ))}
           </motion.div>
+          </div>
+
+          {/* Right column: visual */}
+          <div className="lg:col-span-5 xl:col-span-6 relative h-[420px] sm:h-[500px] lg:h-[560px]">
+            <HeroVisual />
+          </div>
         </div>
       </div>
 
