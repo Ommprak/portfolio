@@ -1,30 +1,9 @@
 import { motion } from 'framer-motion';
-import { useState, useEffect } from 'react';
 import { useLocation } from 'wouter';
+import HeroVisual from '@/components/hero-visual';
 
 export default function Hero() {
-  const [splineError, setSplineError] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
-  const [shouldLoadSpline, setShouldLoadSpline] = useState(false);
   const [, navigate] = useLocation();
-
-  useEffect(() => {
-    const checkMobile = () => {
-      const mobile =
-        /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-          navigator.userAgent
-        ) || window.innerWidth <= 768;
-      setIsMobile(mobile);
-      if (mobile) {
-        setTimeout(() => setShouldLoadSpline(true), 1500);
-      } else {
-        setShouldLoadSpline(true);
-      }
-    };
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
 
   const scrollToSection = (id: string) => {
     const el = document.getElementById(id);
@@ -34,35 +13,10 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center overflow-hidden"
+      className="relative min-h-screen flex items-center overflow-hidden pt-24 pb-16"
     >
-      {/* 3D background */}
-      {!splineError && shouldLoadSpline ? (
-        <div className="absolute inset-0 w-full h-full z-0 opacity-90">
-          <iframe
-            src="https://my.spline.design/robotfollowcursorforlandingpage-10IZP3Rc7GqnxCb7Kw4yJMu0/"
-            frameBorder={0}
-            width="100%"
-            height="100%"
-            className={`w-full h-full ${isMobile ? 'pointer-events-none' : ''}`}
-            title="Interactive 3D Robot Model"
-            data-testid="spline-3d-model"
-            loading="lazy"
-            onError={() => setSplineError(true)}
-            style={{
-              border: 'none',
-              transform: isMobile ? 'scale(0.85)' : 'none',
-              transformOrigin: 'center',
-            }}
-          />
-        </div>
-      ) : (
-        <div className="absolute inset-0 w-full h-full z-0 bg-gradient-to-br from-accent/10 via-transparent to-blue-900/20" />
-      )}
-
-      {/* Subtle vignette so text reads cleanly over the 3D scene */}
-      <div className="absolute inset-0 z-10 bg-gradient-to-r from-portfolio-bg/85 via-portfolio-bg/40 to-transparent pointer-events-none" />
-      <div className="absolute inset-0 z-10 bg-gradient-to-t from-portfolio-bg/80 via-transparent to-transparent pointer-events-none" />
+      {/* Custom on-brand visual */}
+      <HeroVisual />
 
       {/* Hero content */}
       <div className="container mx-auto px-6 relative z-20">
