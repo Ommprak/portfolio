@@ -1,8 +1,26 @@
+import { useRef } from 'react';
 import { motion } from 'framer-motion';
 import { useIntersectionObserver } from '@/hooks/use-intersection-observer';
 
 export default function Videos() {
   const { ref, isIntersecting } = useIntersectionObserver();
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const handleMouseEnter = () => {
+    const video = videoRef.current;
+    if (!video) return;
+    const playPromise = video.play();
+    if (playPromise !== undefined) {
+      playPromise.catch(() => {});
+    }
+  };
+
+  const handleMouseLeave = () => {
+    const video = videoRef.current;
+    if (!video) return;
+    video.pause();
+    video.currentTime = 0;
+  };
 
   return (
     <section id="videos" className="py-20 relative z-20" ref={ref}>
@@ -37,15 +55,20 @@ export default function Videos() {
           initial={{ opacity: 0, y: 30 }}
           animate={isIntersecting ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.4 }}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
           data-testid="video-embed-1"
         >
-          <iframe
-            src="https://player.cloudinary.com/embed/?cloud_name=dbdnjaewg&public_id=Khaas_india_Reel_1_APR_kibuqz"
-            style={{ width: '100%', height: '100%', aspectRatio: '9 / 16', display: 'block' }}
-            allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
-            allowFullScreen
-            frameBorder="0"
-            title="Khaas India Reel"
+          <video
+            ref={videoRef}
+            src="https://res.cloudinary.com/dbdnjaewg/video/upload/Khaas_india_Reel_1_APR_kibuqz.mp4"
+            poster="https://res.cloudinary.com/dbdnjaewg/video/upload/so_0/Khaas_india_Reel_1_APR_kibuqz.jpg"
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            controls
+            style={{ width: '100%', height: '100%', aspectRatio: '9 / 16', display: 'block', background: '#000' }}
           />
         </motion.div>
       </div>
