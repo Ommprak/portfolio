@@ -13,49 +13,49 @@ const REVIEWS: Review[] = [
     quote:
       'Omm has a sharp eye for detail. He turned around our entire reel campaign in days and the engagement spoke for itself.',
     name: 'Sneha Kapoor',
-    role: 'Marketing Lead, Khaas India',
+    role: 'Marketing Lead',
   },
   {
     quote:
       'Working with Omm felt effortless. He listened, iterated fast, and delivered visuals that actually represented our brand.',
     name: 'Rahul Verma',
-    role: 'Founder, Disposal Wala',
+    role: 'Founder',
   },
   {
     quote:
       'From the brand identity to the launch reels, every asset Omm shipped felt cohesive and on-brand. Highly recommend.',
     name: 'Aanya Mehta',
-    role: 'Creative Director, Mohini',
+    role: 'Creative Director',
   },
   {
     quote:
       'He gets the brief on the first call. Our social numbers doubled within a month of switching to his reels.',
     name: 'Arjun Iyer',
-    role: 'Growth Lead, Frankfinn',
+    role: 'Growth Lead',
   },
   {
     quote:
       'Editorial layouts that finally match our content. Clients have been complimenting the new look non-stop.',
     name: 'Priya Nair',
-    role: 'Editor, Spectrum Magazine',
+    role: 'Editor',
   },
   {
     quote:
       'Reliable, fast, and genuinely creative. Omm is the rare freelancer who feels like part of the in-house team.',
     name: 'Karan Malhotra',
-    role: 'Co-founder, Lunara Studio',
+    role: 'Co-founder',
   },
   {
     quote:
       'The motion work he delivered for our launch had a polish I usually only see from much bigger studios.',
     name: 'Ishita Sharma',
-    role: 'Brand Manager, Mohini',
+    role: 'Brand Manager',
   },
   {
     quote:
       'Crisp design, sharp instincts, zero drama. He just gets it done — and it always looks great.',
     name: 'Rohan Desai',
-    role: 'Product Lead, Disposal Wala',
+    role: 'Product Lead',
   },
   {
     quote:
@@ -67,7 +67,7 @@ const REVIEWS: Review[] = [
     quote:
       'Brought a tired identity back to life. The new system is flexible, modern, and genuinely ours.',
     name: 'Vikram Joshi',
-    role: 'Founder, Studio Verve',
+    role: 'Founder',
   },
   {
     quote:
@@ -124,8 +124,8 @@ export default function Testimonials() {
         <div className="pointer-events-none absolute inset-y-0 right-0 w-24 md:w-40 z-10 bg-gradient-to-l from-portfolio-bg to-transparent" />
 
         <div className="flex flex-col gap-6">
-          <Marquee items={rows[0]} duration={90} direction="left" />
-          <Marquee items={rows[1]} duration={110} direction="right" />
+          <Marquee items={rows[0]} duration={140} direction="left" />
+          <Marquee items={rows[1]} duration={170} direction="right" />
         </div>
       </div>
     </section>
