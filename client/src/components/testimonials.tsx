@@ -163,10 +163,7 @@ function Marquee({
               <div className="w-10 h-10 rounded-full bg-accent/15 border border-portfolio-accent/30 flex items-center justify-center text-accent font-semibold">
                 {item.name.charAt(0)}
               </div>
-              <div className="leading-tight">
-                <div className="text-sm font-semibold">{item.name}</div>
-                <div className="text-xs text-muted-foreground">{item.role}</div>
-              </div>
+              <div className="text-sm font-semibold">{item.name}</div>
             </figcaption>
           </figure>
         ))}
