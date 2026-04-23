@@ -20,78 +20,82 @@ export default function Videos() {
   };
 
   return (
-    <section id="videos" className="py-20 relative z-20" ref={ref}>
+    <section id="videos" className="py-28 relative z-20" ref={ref}>
       <div className="container mx-auto px-6">
-        <motion.h2
-          className="text-4xl font-bold text-center mb-4 glow-text"
+        <motion.div
+          className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12"
           initial={{ opacity: 0, y: 30 }}
           animate={isIntersecting ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
-          data-testid="videos-title"
+          transition={{ duration: 0.7 }}
         >
-          Featured Videos
-        </motion.h2>
-        <motion.p
-          className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto"
-          initial={{ opacity: 0, y: 20 }}
+          <div className="max-w-xl">
+            <span className="eyebrow mb-4" data-testid="videos-eyebrow">
+              Reels & Motion
+            </span>
+            <h2 className="section-title mt-4" data-testid="videos-title">
+              Featured <span className="gradient-text">videos</span>.
+            </h2>
+            <p
+              className="text-muted-foreground mt-4"
+              data-testid="videos-subtitle"
+            >
+              Hover any tile to preview the reel — explore the full library for everything I've shipped.
+            </p>
+          </div>
+          <div className="hidden md:flex items-center gap-2">
+            <button
+              type="button"
+              onClick={() => scrollBy('left')}
+              className="w-11 h-11 rounded-full glass flex items-center justify-center hover:text-accent hover:border-portfolio-accent/40 transition-all"
+              aria-label="Scroll left"
+              data-testid="videos-scroll-left"
+            >
+              <i className="ph ph-caret-left text-lg"></i>
+            </button>
+            <button
+              type="button"
+              onClick={() => scrollBy('right')}
+              className="w-11 h-11 rounded-full glass flex items-center justify-center hover:text-accent hover:border-portfolio-accent/40 transition-all"
+              aria-label="Scroll right"
+              data-testid="videos-scroll-right"
+            >
+              <i className="ph ph-caret-right text-lg"></i>
+            </button>
+          </div>
+        </motion.div>
+
+        <motion.div
+          ref={scrollRef}
+          className="flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-4 px-1 -mx-1"
+          initial={{ opacity: 0, y: 30 }}
           animate={isIntersecting ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.2 }}
-          data-testid="videos-subtitle"
+          data-testid="videos-carousel"
         >
-          A selection of my video work — hover any video to preview it. Explore the full collection for the complete library.
-        </motion.p>
+          {featured.map((video) => (
+            <div
+              key={video.id}
+              className="snap-center shrink-0 w-[240px] sm:w-[260px] md:w-[280px]"
+            >
+              <VideoCard video={video} />
+            </div>
+          ))}
+        </motion.div>
 
-        <div className="relative">
-          <button
-            type="button"
-            onClick={() => scrollBy('left')}
-            className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 z-10 w-10 h-10 rounded-full glass items-center justify-center hover:glow transition-all"
-            aria-label="Scroll left"
-            data-testid="videos-scroll-left"
-          >
-            <i className="ph ph-caret-left text-xl"></i>
-          </button>
-          <button
-            type="button"
-            onClick={() => scrollBy('right')}
-            className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 z-10 w-10 h-10 rounded-full glass items-center justify-center hover:glow transition-all"
-            aria-label="Scroll right"
-            data-testid="videos-scroll-right"
-          >
-            <i className="ph ph-caret-right text-xl"></i>
-          </button>
-
-          <motion.div
-            ref={scrollRef}
-            className="flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-4 px-1 -mx-1"
-            style={{ scrollbarWidth: 'thin' }}
-            initial={{ opacity: 0, y: 30 }}
-            animate={isIntersecting ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            data-testid="videos-carousel"
-          >
-            {featured.map((video) => (
-              <div
-                key={video.id}
-                className="snap-center shrink-0 w-[260px] sm:w-[280px] md:w-[300px]"
-              >
-                <VideoCard video={video} />
-              </div>
-            ))}
-          </motion.div>
-        </div>
-
-        <div className="flex justify-center mt-10">
+        <div className="flex justify-center mt-12">
           <motion.button
             type="button"
             onClick={() => navigate('/videos')}
-            className="glass rounded-lg px-6 py-3 hover:glow transition-all duration-300 flex items-center gap-2"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            className="btn-primary"
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 0.97 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={isIntersecting ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.4 }}
             data-testid="explore-all-videos-button"
           >
             <span>Explore All Videos</span>
-            <i className="ph ph-arrow-up-right"></i>
+            <i className="ph ph-arrow-right"></i>
           </motion.button>
         </div>
       </div>

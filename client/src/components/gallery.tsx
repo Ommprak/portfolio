@@ -130,36 +130,41 @@ export default function Gallery() {
   ];
 
   return (
-    <section className="py-20 relative z-20" ref={ref}>
+    <section id="gallery" className="py-28 relative z-20" ref={ref}>
       <div className="container mx-auto px-6">
-        <motion.h2
-          className="text-4xl font-bold text-center mb-16 glow-text"
-          initial={{ opacity: 0, x: -100 }}
-          animate={isIntersecting ? { opacity: 1, x: 0 } : {}}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          data-testid="gallery-title"
+        <motion.div
+          className="max-w-2xl mx-auto text-center mb-14"
+          initial={{ opacity: 0, y: 30 }}
+          animate={isIntersecting ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.7 }}
         >
-          Design Gallery
-        </motion.h2>
-        
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+          <span className="eyebrow mb-4" data-testid="gallery-eyebrow">
+            Design Gallery
+          </span>
+          <h2 className="section-title mt-4" data-testid="gallery-title">
+            A look at the <span className="gradient-text">craft</span>.
+          </h2>
+        </motion.div>
+
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
           {galleryItems.map((item, index) => (
             <motion.div
               key={item.id}
-              className="relative group cursor-pointer"
-              initial={{ opacity: 0, y: 30 }}
+              className="relative group cursor-pointer rounded-xl overflow-hidden border border-portfolio-border"
+              initial={{ opacity: 0, y: 20 }}
               animate={isIntersecting ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              transition={{ duration: 0.4, delay: Math.min(index * 0.05, 0.5) }}
+              whileHover={{ y: -4 }}
               onClick={() => setSelectedImage(item.fullsize)}
               data-testid={`gallery-item-${item.id}`}
             >
               <img
                 src={item.thumbnail}
                 alt={item.alt}
-                className="w-full aspect-video object-cover rounded-lg"
+                className="w-full aspect-square object-cover transition-transform duration-500 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center">
-                <i className="ph ph-magnifying-glass-plus text-3xl text-white"></i>
+              <div className="absolute inset-0 bg-portfolio-bg/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <i className="ph ph-magnifying-glass-plus text-3xl text-accent"></i>
               </div>
             </motion.div>
           ))}

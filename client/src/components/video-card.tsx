@@ -11,10 +11,12 @@ export default function VideoCard({ video, className = '' }: VideoCardProps) {
 
   return (
     <div
-      className={`rounded-xl overflow-hidden bg-black ${className}`}
+      className={`relative rounded-xl overflow-hidden bg-black border border-portfolio-border hover-lift ${className}`}
       style={{
-        boxShadow:
-          '0 0 25px rgba(139, 92, 246, 0.4), 0 0 50px rgba(139, 92, 246, 0.2)',
+        boxShadow: isHovering
+          ? '0 20px 50px -10px hsla(199, 89%, 70%, 0.45)'
+          : '0 12px 30px -10px hsla(199, 89%, 70%, 0.18)',
+        transition: 'box-shadow 0.3s ease',
       }}
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
