@@ -68,7 +68,7 @@ export default function Videos() {
             playsInline
             preload="metadata"
             controls
-            style={{ width: '100%', height: '100%', aspectRatio: '9 / 16', display: 'block', background: '#000' }}
+            style={{ width: '100%', height: 'auto', display: 'block', background: '#000' }}
           />
         </motion.div>
       </div>
