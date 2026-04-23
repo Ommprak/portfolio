@@ -27,8 +27,10 @@ export default function Videos() {
         </motion.p>
 
         <motion.div
-          className="max-w-4xl mx-auto rounded-xl overflow-hidden"
+          className="mx-auto rounded-xl overflow-hidden"
           style={{
+            width: '100%',
+            maxWidth: '360px',
             boxShadow:
               '0 0 25px rgba(139, 92, 246, 0.5), 0 0 50px rgba(139, 92, 246, 0.3), 0 0 75px rgba(139, 92, 246, 0.1)',
           }}
@@ -39,9 +41,7 @@ export default function Videos() {
         >
           <iframe
             src="https://player.cloudinary.com/embed/?cloud_name=dbdnjaewg&public_id=Khaas_india_Reel_1_APR_kibuqz"
-            width="640"
-            height="360"
-            style={{ height: 'auto', width: '100%', aspectRatio: '640 / 360' }}
+            style={{ width: '100%', height: '100%', aspectRatio: '9 / 16', display: 'block' }}
             allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
             allowFullScreen
             frameBorder="0"
